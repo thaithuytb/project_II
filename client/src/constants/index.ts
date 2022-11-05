@@ -1,0 +1,1 @@
+export const LOCAL_STORAGE_TOKEN = "TOKEN_PROJECT_II";

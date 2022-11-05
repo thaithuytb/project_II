@@ -1,7 +1,0 @@
-.todo {
-    display: flex;
-}
-
-.todo div:first-child {
-    margin: 0px 20px;
-}
