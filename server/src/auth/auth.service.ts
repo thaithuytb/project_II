@@ -1,12 +1,13 @@
 import { InjectRepository } from '@mikro-orm/nestjs';
 import { EntityRepository } from '@mikro-orm/postgresql';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
-import { User } from 'src/entities/user.entity';
+import { User } from '../entities/user.entity';
 import { sign } from 'jsonwebtoken';
-import resolveError from 'src/errors/resolveError';
-import { hash, verify } from 'argon2';
+import * as argon2 from 'argon2';
 import { RegisterDto } from './dtos/register_input.dto';
 import { LoginDto } from './dtos/login_input.dto';
+import { responseSuccess } from '../responses/success';
+import resolveError from '../responses/resolveError';
 
 @Injectable()
 export class AuthService {
@@ -25,25 +26,23 @@ export class AuthService {
         throw new HttpException('Email is existed', HttpStatus.BAD_REQUEST);
       }
 
-      const hashedPassword = await hash(password);
+      const hashedPassword = await argon2.hash(password);
 
       const newUser = new User();
       newUser.email = email;
       newUser.password = hashedPassword;
 
-      const userDb = await this.userRepository.create(newUser);
-
-      await this.userRepository.persistAndFlush(userDb);
+      await this.userRepository.persistAndFlush(newUser);
 
       const token = await this.signToken({
-        id: userDb.id,
-        email: userDb.email,
+        id: newUser.id,
+        email: newUser.email,
       } as User);
 
-      return {
-        user: userDb,
+      return responseSuccess({
+        user: newUser,
         token,
-      };
+      });
     } catch (error) {
       resolveError(error);
     }
@@ -61,7 +60,7 @@ export class AuthService {
         );
       }
 
-      const correctPassword = await verify(findUser.password, password);
+      const correctPassword = await argon2.verify(findUser.password, password);
       if (!correctPassword) {
         throw new HttpException(
           'Email or password is incorrect',
@@ -74,10 +73,7 @@ export class AuthService {
         email: findUser.email,
       } as User);
 
-      return {
-        user: findUser,
-        token,
-      };
+      return responseSuccess({ user: findUser, token });
     } catch (error) {
       resolveError(error);
     }

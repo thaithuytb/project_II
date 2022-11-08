@@ -10,7 +10,7 @@ const ProtectRoute = () => {
       {isAuthenticated ? (
         <Navigate to="/dashboard" />
       ) : (
-        <Navigate to="/register" />
+        <Navigate to="/login" />
       )}
     </>
   );
