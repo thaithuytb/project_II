@@ -7,11 +7,12 @@ const ProtectRoute = () => {
 
   return (
     <>
-      {isAuthenticated ? (
+      {/* {isAuthenticated ? (
         <Navigate to="/dashboard" />
       ) : (
         <Navigate to="/login" />
-      )}
+      )} */}
+      <Navigate to="/homePage" />
     </>
   );
 };

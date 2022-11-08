@@ -1,0 +1,8 @@
+.monitoring {
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    height: calc(100vh - 80px);
+    box-sizing: border-box;
+}

@@ -1,0 +1,29 @@
+.location {
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    font-size: 20px;
+    flex: 1;
+}
+
+.location div {
+    padding: 20px 20px 20px 40px;
+    border-bottom: 1px solid #d4d4d4;
+    background-color: #e0e4e5;
+}
+
+.location div:hover {
+    background-color: #cbf1f5;
+    cursor: pointer;
+    border-right: 5px solid rgb(148, 223, 236);
+}
+
+.location-focus {
+    background-color: #cbf1f5 !important;
+    border-right: 5px solid rgb(148, 223, 236);
+}
+
+.location div:last-child {
+    border-bottom: none;
+}

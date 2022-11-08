@@ -1,0 +1,7 @@
+.conversation {
+    box-sizing: border-box;
+    padding: 20px;
+    border-left: 3px solid rgb(230, 232, 233);
+    min-width: 400px;
+    flex: 1;
+}

@@ -1,0 +1,29 @@
+.info {
+    padding: 25px 15px 0px 0px;
+    flex: 2.5;
+}
+
+.info__title {
+    /* font-size: 28px; */
+    text-align: center;
+    width: 100%;
+}
+
+.info__title div {
+    padding: 0px 0px 7px;
+    font-size: 24px;
+}
+
+.info__title img {
+    width: 100%;
+    max-height: 270px;
+}
+
+.info__content {
+    font-size: 20px;
+}
+
+.info__content div {
+    padding: 7px;
+}
+
