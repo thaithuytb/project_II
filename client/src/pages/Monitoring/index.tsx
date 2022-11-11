@@ -1,6 +1,6 @@
 import Conversation from "../../components/conversation";
 import Info from "../../components/info";
-import Location from "../../components/location";
+import Location from "../location";
 import "./monitoring.css";
 
 const Monitoring = () => {

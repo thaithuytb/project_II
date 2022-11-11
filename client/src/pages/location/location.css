@@ -19,9 +19,16 @@
     border-right: 5px solid rgb(148, 223, 236);
 }
 
-.location-focus {
-    background-color: #cbf1f5 !important;
-    border-right: 5px solid rgb(148, 223, 236);
+.location-title {
+    text-align: center;
+    background-color: #d4e6ed !important;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.location-title:hover {
+    text-align: center;
+    background-color: #d4e6ed !important;
+    border: none !important;
 }
 
 .location div:last-child {
