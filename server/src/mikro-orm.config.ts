@@ -1,6 +1,8 @@
 import { Logger } from '@nestjs/common';
 import { MikroOrmModuleSyncOptions } from '@mikro-orm/nestjs';
 import { User } from './entities/user.entity';
+import { Measure } from './entities/measure.entity';
+import { LocationMonitoring } from './entities/location_monitoring.entity';
 
 const configMikroOrm: MikroOrmModuleSyncOptions = {
   type: 'postgresql',
@@ -10,7 +12,7 @@ const configMikroOrm: MikroOrmModuleSyncOptions = {
   password: process.env.DATABASE_PASSWORD,
   port: Number(process.env.DATABASE_HOST),
   tsNode: true,
-  entities: [User],
+  entities: [User, Measure, LocationMonitoring],
   discovery: {
     disableDynamicFileAccess: true,
   },

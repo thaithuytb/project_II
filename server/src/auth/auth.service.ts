@@ -2,7 +2,7 @@ import { InjectRepository } from '@mikro-orm/nestjs';
 import { EntityRepository } from '@mikro-orm/postgresql';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { User } from '../entities/user.entity';
-import { sign } from 'jsonwebtoken';
+import { sign, verify } from 'jsonwebtoken';
 import * as argon2 from 'argon2';
 import { RegisterDto } from './dtos/register_input.dto';
 import { LoginDto } from './dtos/login_input.dto';
@@ -81,6 +81,17 @@ export class AuthService {
 
   async signToken(user: User) {
     return sign(user, 'abc');
+  }
+
+  async verifyToken(token: string) {
+    return await verify(token, 'abc');
+  }
+
+  async findUserByIdAndEmail(userId: number, email: string) {
+    return await this.userRepository.findOne({
+      id: userId,
+      email,
+    });
   }
 
   async findUserByEmail(email: string) {
