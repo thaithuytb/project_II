@@ -1,34 +1,10 @@
-import { useEffect, useState } from "react";
-import locationApi from "../../api/locationApi";
+import { useContext } from "react";
 import { LocationsList } from "../../components/locationsList";
+import { MonitoringContext } from "../../contexts/monitoringContext";
 import "./location.css";
 
-export interface ILocation {
-  id: number;
-  createdAt: string;
-  updatedAt: string;
-  name: string;
-}
-
 export default function Location() {
-  const [locationsList, setLocationsList] = useState<ILocation[] | null>(null);
-
-  const getAllLocation = async () => {
-    const { getAll } = locationApi;
-    try {
-      const { data } = await getAll();
-      if (data.success) {
-        setLocationsList([...data.data]);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getAllLocation();
-  }, []);
-
+  const { locationsList } = useContext(MonitoringContext);
   return (
     <div className="location">
       <div className="location-title">Địa điểm quan trắc</div>

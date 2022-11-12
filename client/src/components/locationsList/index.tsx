@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MonitoringContext } from "../../contexts/monitoringContext";
+import "./locationList.css";
 
 export interface ILocation {
   id: number;
@@ -14,5 +16,27 @@ interface PropsLocationsList {
 export const LocationsList: React.FC<PropsLocationsList> = ({
   locationInfo,
 }) => {
-  return <div>{locationInfo.name}</div>;
+  const {
+    getLocationFocusToShowMeasure,
+    locationIsDisplayedMeasure,
+    getInfoMeasureOfLocation,
+  } = useContext(MonitoringContext);
+
+  const handleClick = async (event: React.MouseEvent<HTMLElement>) => {
+    await getLocationFocusToShowMeasure(locationInfo);
+    await getInfoMeasureOfLocation(locationInfo.id);
+  };
+
+  return (
+    <div
+      className={
+        locationIsDisplayedMeasure?.id === locationInfo.id
+          ? "info__location-active"
+          : ""
+      }
+      onClick={handleClick}
+    >
+      {locationInfo.name}
+    </div>
+  );
 };

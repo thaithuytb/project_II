@@ -1,0 +1,5 @@
+.info__location-active {
+    background-color: #cbf1f5 !important;
+    cursor: pointer;
+    border-right: 5px solid rgb(148, 223, 236);
+}
