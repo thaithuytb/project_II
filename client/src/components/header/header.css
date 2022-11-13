@@ -16,11 +16,13 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    text-decoration: none;
 }
 
-.header .header__font div {
+.header .header__font a {
     margin: 0px 40px 0px 0px;
     padding: 0 20px;
+    text-decoration: none;
 }
 
 .header__font-logo {
@@ -38,7 +40,7 @@
     height: 60px;
 }
 
-.header .header__font div:hover {
+.header .header__font a:hover {
     color: black;
 }
 
@@ -48,6 +50,7 @@
     border: 1px solid #9acddb;
     border-radius: 7px;
     background-color: #9acddb;
+    text-decoration: none;
 }
 
 .header__after:hover {

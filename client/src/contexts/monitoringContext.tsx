@@ -44,7 +44,7 @@ const MonitoringContextProvider = ({
     monitoringStateDefault
   );
 
-  const getLocationFocusToShowMeasure = async (location: ILocation) => {
+  const getLocationFocusToShowMeasure = (location: ILocation) => {
     setMonitoringState({
       ...monitoringState,
       locationIsDisplayedMeasure: { ...location },
@@ -72,9 +72,11 @@ const MonitoringContextProvider = ({
     try {
       const { data } = await getLatestMeasureById(location_id);
       if (data.success) {
-        setMonitoringState({
-          ...monitoringState,
-          infoMeasureOfLocation: { ...data.data },
+        setMonitoringState((monitoringState) => {
+          return {
+            ...monitoringState,
+            infoMeasureOfLocation: { ...data.data },
+          };
         });
       }
     } catch (error) {
@@ -85,6 +87,7 @@ const MonitoringContextProvider = ({
   useEffect(() => {
     console.log("use Effect monitoring");
     getAllLocation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const data = {

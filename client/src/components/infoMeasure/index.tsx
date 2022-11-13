@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import moment from "moment";
 import { MonitoringContext } from "../../contexts/monitoringContext";
 
 export default function InfoMeasure() {
@@ -8,7 +9,17 @@ export default function InfoMeasure() {
     infoMeasureOfLocation && (
       <>
         <div>
-          Thời gian quan trắc (mới nhất): {infoMeasureOfLocation.createdAt}{" "}
+          Thời gian quan trắc (mới nhất):
+          <span
+            style={{
+              color: "blue",
+              paddingLeft: "10px",
+            }}
+          >
+            {moment(infoMeasureOfLocation.createdAt).format(
+              "HH:mm:ss - MM/DD/YYYY"
+            )}
+          </span>
         </div>
         <div>- Độ Ph: {infoMeasureOfLocation.ph} </div>
         <div>- DO: {infoMeasureOfLocation._do}</div>

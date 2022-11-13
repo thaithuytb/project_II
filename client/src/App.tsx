@@ -7,12 +7,14 @@ import AuthContextProvider from "./contexts/authContext";
 import "./App.css";
 import HomePage from "./pages/homePage";
 import MonitoringContextProvider from "./contexts/monitoringContext";
+import Header from "./components/header/index";
 
 function App() {
   return (
     <AuthContextProvider>
       <MonitoringContextProvider>
         <BrowserRouter>
+          <Header />
           <Routes>
             <Route path="/" element={<ProtectRoute />} />
             <Route path="/login" element={<Login />} />

@@ -1,20 +1,23 @@
 import "./header.css";
 import Logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="header__font">
-        <div className="header__font-logo">
+        <Link to="login" className="header__font-logo">
           <div>
             <img src={Logo} alt="" />
           </div>
           <div>The logo</div>
-        </div>
-        <div>Device Information</div>
-        <div>Contact us</div>
+        </Link>
+        <Link to="login">Device Information</Link>
+        <Link to="login">Contact us</Link>
       </div>
-      <div className="header__after">Login/register</div>
+      <Link to="login" className="header__after">
+        Login/register
+      </Link>
     </div>
   );
 };

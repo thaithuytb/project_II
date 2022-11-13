@@ -5,3 +5,25 @@
     min-width: 400px;
     flex: 1;
 }
+
+.conversation p {
+    color: #777777;
+    font-size: 16px;
+}
+
+.conversation p span {
+    color: #333;
+    font-size: 18px;
+    padding: 0px 10px 0px 0px;
+}
+
+.conversation form {
+    border: 1px solid #777777;
+    border-radius: 4px;
+}
+
+.conversation form input {
+    padding: 12px;
+    color: #777777;
+    font-size: 16px;
+}

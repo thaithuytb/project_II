@@ -23,6 +23,7 @@ export const LocationsList: React.FC<PropsLocationsList> = ({
   } = useContext(MonitoringContext);
 
   const handleClick = async (event: React.MouseEvent<HTMLElement>) => {
+    console.log(locationInfo);
     await getLocationFocusToShowMeasure(locationInfo);
     await getInfoMeasureOfLocation(locationInfo.id);
   };
