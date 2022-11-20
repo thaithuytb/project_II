@@ -1,5 +1,6 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { MeasureService } from './measure.service';
+import { CreateMeasureDto } from './dtos/createMeasureDto';
 
 @Controller('api/v1/measures')
 export class MeasureController {
@@ -18,6 +19,17 @@ export class MeasureController {
     return await this.measureService.getMeasureByIdAndLocationId(
       +locationId,
       +measureId,
+    );
+  }
+
+  @Post('/:locationId')
+  async createLocationId(
+    @Param('locationId') locationId: string,
+    @Body('createMeasureDto') createMeasureDto: CreateMeasureDto,
+  ) {
+    return await this.measureService.createMeasure(
+      +locationId,
+      createMeasureDto,
     );
   }
 }

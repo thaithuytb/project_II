@@ -12,11 +12,11 @@ const Header = () => {
           </div>
           <div>The logo</div>
         </Link>
-        <Link to="login">Device Information</Link>
-        <Link to="login">Contact us</Link>
+        <Link to="login">Quy định giới hạn</Link>
+        <Link to="login">Liên hệ</Link>
       </div>
       <Link to="login" className="header__after">
-        Login/register
+        Đăng ký/đăng nhập
       </Link>
     </div>
   );

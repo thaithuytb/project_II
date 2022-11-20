@@ -8,7 +8,7 @@ export class Measure extends CustomBaseEntity {
   ph!: number;
 
   @Property()
-  _do!: number;
+  d0_do!: number;
 
   @Property()
   amoni!: number;
@@ -17,13 +17,25 @@ export class Measure extends CustomBaseEntity {
   clorua!: number;
 
   @Property()
-  temperature!: number;
-
-  @Property()
-  salinity!: number;
+  fe!: number;
 
   @ManyToOne({
     entity: () => LocationMonitoring,
   })
   locationMonitoring!: LocationMonitoring;
+
+  constructor(
+    ph: number,
+    d0_do: number,
+    amoni: number,
+    clorua: number,
+    fe: number,
+  ) {
+    super();
+    this.ph = ph;
+    this.d0_do = d0_do;
+    this.amoni = amoni;
+    this.clorua = clorua;
+    this.fe = fe;
+  }
 }

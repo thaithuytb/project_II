@@ -11,8 +11,7 @@ interface IMeasure {
   _do: number;
   amoni: number;
   clorua: number;
-  temperature: number;
-  salinity: number;
+  fe: number;
 }
 
 const monitoringStateDefault = {

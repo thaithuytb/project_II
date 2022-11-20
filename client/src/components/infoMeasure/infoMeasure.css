@@ -1,0 +1,20 @@
+.info__measure-table table, th, td {
+    border:1px solid rgb(30, 156, 194);
+}
+
+.info__measure-table {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.info__measure-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.info__measure-table tr:nth-child(even) {background-color: rgb(231, 228, 228);}
+
+.info__measure-table table th, td{
+  padding: 7px 15px;
+}

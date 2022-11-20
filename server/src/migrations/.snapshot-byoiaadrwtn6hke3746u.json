@@ -110,8 +110,8 @@
           "nullable": false,
           "mappedType": "integer"
         },
-        "_do": {
-          "name": "_do",
+        "d0_do": {
+          "name": "d0_do",
           "type": "int",
           "unsigned": false,
           "autoincrement": false,
@@ -137,17 +137,8 @@
           "nullable": false,
           "mappedType": "integer"
         },
-        "temperature": {
-          "name": "temperature",
-          "type": "int",
-          "unsigned": false,
-          "autoincrement": false,
-          "primary": false,
-          "nullable": false,
-          "mappedType": "integer"
-        },
-        "salinity": {
-          "name": "salinity",
+        "fe": {
+          "name": "fe",
           "type": "int",
           "unsigned": false,
           "autoincrement": false,

@@ -1,0 +1,46 @@
+.limit__value {
+    font-size: 16px;
+}
+
+.limit__value div {
+    display: flex;
+    align-items: center;
+    margin: 3px 0px;
+}
+
+.limit__value div span:first-child {
+    min-width: 20px;
+}
+
+.limit__value-last {
+    padding-left: 50px;
+    display: block;
+    width: 100%;
+    height: 10px;
+    /* background-color: blueviolet; */
+}
+
+.limit__value-last.a1 {
+    background-color: #99dceb;
+}
+
+.limit__value-last.a2 {
+    background-color: #127e97;
+}
+
+.limit__value-last.b1 {
+    background-color: #4e699b;
+}
+
+.limit__value-last.b2 {
+    background-color: #6068df;
+}
+
+.limit__value-first {
+    padding: 0px 7px;
+    margin: 0px 10px;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: rgb(131, 126, 126);
+}

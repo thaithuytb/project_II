@@ -1,6 +1,8 @@
 .info {
     padding: 25px 15px 0px 0px;
     flex: 2.5;
+    background-color: rgb(237, 236, 238);
+
 }
 
 .info__title {

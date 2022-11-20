@@ -8,5 +8,6 @@ import { MikroOrmModule } from '@mikro-orm/nestjs';
   imports: [MikroOrmModule.forFeature([LocationMonitoring])],
   providers: [LocationMonitoringService],
   controllers: [LocationMonitoringController],
+  exports: [LocationMonitoringService],
 })
 export class LocationMonitoringModule {}
